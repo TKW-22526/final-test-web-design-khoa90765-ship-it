@@ -6,7 +6,8 @@
     <title>Chi tiết món ăn</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+
+<body class="products-page">
 
 <header>
     <h1>CHI TIẾT MÓN ĂN</h1>
@@ -16,18 +17,17 @@
 
     <div class="card">
 
-        <img src="../assets/pho.jpg" alt="Phở">
+        <img id="foodImage" src="" alt="">
 
-        <h2>Phở Bò</h2>
+        <h2 id="foodName"></h2>
 
-        <p><b>Xuất xứ:</b> Hà Nội, Việt Nam.</p>
+        <p id="foodDesc"></p>
 
-        <p><b>Nguyên liệu:</b> Bánh phở, thịt bò, xương bò, hành, gừng, quế, hồi và các loại gia vị.</p>
+        <h3>nguyên liệu</h3>
+        <p id="foodingredients"></p>
 
-        <p><b>Mô tả:</b> Phở bò là món ăn truyền thống nổi tiếng của Việt Nam với nước dùng được hầm từ xương trong nhiều giờ, tạo nên hương vị thơm ngon đặc trưng.</p>
-
-        <p><b>Giá tham khảo:</b> 40.000đ - 70.000đ/tô.</p>
-
+        <h3>giá cả</h3>
+        <p id="foodprice"></p>
     </div>
 
 </div>
@@ -43,6 +43,171 @@
         <button>Trang chủ</button>
     </a>
 </center>
+
+<script>
+
+ const foods = {
+
+    pho:{
+        name:"Phở Bò",
+        image:"../assets/pho.jpg",
+        desc:"Phở bò là món ăn truyền thống nổi tiếng của Việt Nam với nước dùng đậm đà.",
+        ingredients:"Bánh phở, thịt bò, hành lá, ngò rí, giá đỗ, chanh, ớt",
+        price:"45.000 VNĐ"
+    },
+
+    banhmi:{
+        name:"Bánh Mì",
+        image:"../assets/banh mi.jpg",
+        desc:"Bánh mì giòn thơm kết hợp nhiều loại nhân hấp dẫn.",
+        ingredients:"Bánh mì, chả lụa, thịt nguội, dưa leo, đồ chua, rau thơm",
+        price:"25.000 VNĐ"
+    },
+
+    bunbo:{
+        name:"Bún Bò Huế",
+        image:"../assets/bunbo.jpg",
+        desc:"Đặc sản Huế với vị cay nồng và hương thơm đặc trưng.",
+        ingredients:"Bún, thịt bò, giò heo, sả, hành, rau sống",
+        price:"50.000 VNĐ"
+    },
+
+    comtam:{
+        name:"Cơm Tấm",
+        image:"../assets/comtam.jpg",
+        desc:"Món cơm đặc trưng của miền Nam Việt Nam.",
+        ingredients:"Cơm tấm, sườn nướng, trứng, bì, dưa chua",
+        price:"40.000 VNĐ"
+    },
+
+    comga:{
+        name:"Cơm Gà",
+        image:"../assets/comga.jpg",
+        desc:"Cơm gà thơm ngon với thịt gà mềm.",
+        ingredients:"Cơm, thịt gà, dưa leo, rau thơm",
+        price:"40.000 VNĐ"
+    },
+
+    comchien:{
+        name:"Cơm Chiên Hải Sản",
+        image:"../assets/comchien.jpg",
+        desc:"Cơm chiên cùng tôm, mực và rau củ.",
+        ingredients:"Cơm, tôm, mực, cà rốt, đậu Hà Lan, hành lá",
+        price:"55.000 VNĐ"
+    },
+
+    hutieu:{
+        name:"Hủ Tiếu Nam Vang",
+        image:"../assets/hutieu.jpg",
+        desc:"Món hủ tiếu đậm đà, hấp dẫn.",
+        ingredients:"Hủ tiếu, tôm, thịt bằm, gan heo, rau sống",
+        price:"45.000 VNĐ"
+    },
+
+    mixao:{
+        name:"Mì Xào Bò",
+        image:"../assets/mixao.jpg",
+        desc:"Mì xào cùng thịt bò mềm ngon.",
+        ingredients:"Mì, thịt bò, cải xanh, hành tây",
+        price:"50.000 VNĐ"
+    },
+
+    bunthitnuong:{
+        name:"Bún Thịt Nướng",
+        image:"../assets/bunthitnuong.jpg",
+        desc:"Bún tươi ăn kèm thịt nướng thơm lừng.",
+        ingredients:"Bún, thịt nướng, rau sống, đậu phộng",
+        price:"45.000 VNĐ"
+    },
+
+    goicuon:{
+        name:"Gỏi Cuốn",
+        image:"../assets/goicuon.jpg",
+        desc:"Gỏi cuốn tôm thịt tươi ngon.",
+        ingredients:"Bánh tráng, tôm, thịt heo, bún, rau sống",
+        price:"30.000 VNĐ"
+    },
+
+    chagio:{
+        name:"Chả Giò",
+        image:"../assets/chagio.jpg",
+        desc:"Chả giò chiên giòn hấp dẫn.",
+        ingredients:"Bánh tráng, thịt bằm, miến, cà rốt",
+        price:"35.000 VNĐ"
+    },
+
+    garan:{
+        name:"Gà Rán",
+        image:"../assets/garan.jpg",
+        desc:"Gà rán giòn tan, thơm ngon.",
+        ingredients:"Thịt gà, bột chiên giòn, gia vị",
+        price:"60.000 VNĐ"
+    },
+
+    cakhoto:{
+        name:"Cá Kho Tộ",
+        image:"../assets/cakhoto.jpg",
+        desc:"Cá kho tộ đậm vị ăn cùng cơm trắng.",
+        ingredients:"Cá, nước màu, tiêu, hành, tỏi",
+        price:"55.000 VNĐ"
+    },
+
+    calocnuong:{
+        name:"Cá Lóc Nướng Rơm",
+        image:"../assets/calocnuong.jpg",
+        desc:"Cá lóc nướng rơm thơm ngon, đậm đà hương vị quê.",
+        ingredients:"Cá lóc, rau sống, bánh tráng, bún",
+        price:"120.000 VNĐ"
+    },
+
+    xoiga:{
+        name:"Xôi Gà",
+        image:"../assets/xoiga.jpg",
+        desc:"Xôi dẻo ăn cùng thịt gà thơm ngon.",
+        ingredients:"Nếp, thịt gà, hành phi",
+        price:"35.000 VNĐ"
+    },
+
+    pizza:{
+        name:"Pizza Thập Cẩm",
+        image:"../assets/pizza.jpg",
+        desc:"Vỏ bánh mềm có hương vị đa dạng nhờ sự kết hợp của thịt và rau.",
+        ingredients:"Bột mì, phô mai, xúc xích, thịt bò, hành tây, ớt chuông",
+        price:"89.000 VNĐ"
+    },
+
+    miy:{
+        name:"Mì Ý",
+        image:"../assets/miy.jpg",
+        desc:"Sốt cà chua bò bằm thơm ngon.",
+        ingredients:"Mì spaghetti, thịt bò bằm, cà chua, hành tây, phô mai",
+        price:"65.000 VNĐ"
+    },
+
+    burger:{
+        name:"Hamburger",
+        image:"../assets/burger.jpg",
+        desc:"Bánh mì kẹp thịt thơm ngon kết hợp rau tươi và nước sốt đậm đà.",
+        ingredients:"Bánh burger, thịt bò, xà lách, cà chua, phô mai, sốt",
+        price:"55.000 VNĐ"
+    }
+
+};
+const id = new URLSearchParams(window.location.search).get("id");
+
+if(foods[id]){
+    document.getElementById("foodName").innerText = foods[id].name;
+    document.getElementById("foodImage").src = foods[id].image;
+    document.getElementById("foodImage").alt = foods[id].name;
+    document.getElementById("foodDesc").innerText = foods[id].desc;
+
+    document.getElementById("foodingredients").innerText =
+        foods[id].ingredients;
+
+    document.getElementById("foodprice").innerText =
+        foods[id].price;
+}
+</script>
 
 </body>
 </html>
