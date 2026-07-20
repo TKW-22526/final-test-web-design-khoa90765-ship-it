@@ -152,21 +152,32 @@ const foods=[
 },
 ];
 
+const searchInput = document.getElementById("searchInput");
 
-let html = "";
+searchInput.addEventListener("keyup", function(){
+    let keyword = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
 
-foods.forEach(food => {
-    html += `
-    <div class="card">
-        <img src="${food.image}">
-        <h2>${food.name}</h2>
-        <p>${food.desc}</p>
+    cards.forEach(card => {
+        let name = card.querySelector("h2").innerText.toLowerCase();
 
-        <a href="html/chi-tiet.html">
-            <button>Xem chi tiết</button>
-        </a>
-    </div>
-    `;
+        if(name.includes(keyword)){
+            card.style.display = "block";
+        }else{
+            card.style.display = "none";
+        }
+    });
 });
+function addFavorite(food){
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-document.getElementById("food-list").innerHTML = html;
+    const exist = favorites.find(item => item.name === food.name);
+
+    if(!exist){
+        favorites.push(food);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert("Đã thêm vào yêu thích!");
+    }else{
+        alert("Món ăn đã có trong danh sách yêu thích!");
+    }
+}

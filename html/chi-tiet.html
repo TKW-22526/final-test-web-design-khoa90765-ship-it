@@ -13,21 +13,30 @@
     <h1>CHI TIẾT MÓN ĂN</h1>
 </header>
 
-<div class="container">
+<div class="detail-container">
 
-    <div class="card">
+    <img id="foodImage" class="detail-img" src="" alt="">
 
-        <img id="foodImage" src="" alt="">
+    <div class="detail-content">
 
-        <h2 id="foodName"></h2>
+        <h1 id="foodName"></h1>
 
         <p id="foodDesc"></p>
 
-        <h3>nguyên liệu</h3>
-        <p id="foodingredients"></p>
+        <div class="info-box">
 
-        <h3>giá cả</h3>
-        <p id="foodprice"></p>
+            <div class="info-item">
+                <h3>🍽 Nguyên liệu</h3>
+                <p id="foodingredients"></p>
+            </div>
+
+            <div class="info-item">
+                <h3>💰 Giá cả</h3>
+                <p id="foodprice"></p>
+            </div>
+
+        </div>
+
     </div>
 
 </div>
@@ -51,7 +60,7 @@
     pho:{
         name:"Phở Bò",
         image:"../assets/pho.jpg",
-        desc:"Phở bò là món ăn truyền thống nổi tiếng của Việt Nam với nước dùng đậm đà.",
+        desc:"Phở bò có nước dùng ngọt thanh được ninh từ xương trong nhiều giờ, kết hợp với thịt bò mềm và bánh phở dai. Hương vị đậm đà, thơm ngon cùng các loại rau ăn kèm tạo nên nét đặc trưng của ẩm thực Việt Nam. Đây là món ăn được nhiều du khách trong và ngoài nước yêu thích.",
         ingredients:"Bánh phở, thịt bò, hành lá, ngò rí, giá đỗ, chanh, ớt",
         price:"45.000 VNĐ"
     },
@@ -59,7 +68,7 @@
     banhmi:{
         name:"Bánh Mì",
         image:"../assets/banh mi.jpg",
-        desc:"Bánh mì giòn thơm kết hợp nhiều loại nhân hấp dẫn.",
+        desc:"Bánh mì có lớp vỏ giòn rụm bên ngoài, bên trong là phần nhân đa dạng như thịt, chả, rau và nước sốt. Sự kết hợp hài hòa giữa các nguyên liệu tạo nên hương vị thơm ngon, hấp dẫn. Đây là món ăn nhanh nổi tiếng và phổ biến tại Việt Nam.",
         ingredients:"Bánh mì, chả lụa, thịt nguội, dưa leo, đồ chua, rau thơm",
         price:"25.000 VNĐ"
     },
@@ -67,7 +76,7 @@
     bunbo:{
         name:"Bún Bò Huế",
         image:"../assets/bunbo.jpg",
-        desc:"Đặc sản Huế với vị cay nồng và hương thơm đặc trưng.",
+        desc:"Bún bò Huế nổi bật với nước dùng đậm đà, thơm mùi sả và vị cay đặc trưng. Thịt bò mềm cùng sợi bún dai tạo nên sức hấp dẫn riêng của món ăn. Hương vị độc đáo này đã góp phần làm nên danh tiếng của ẩm thực miền Trung.",
         ingredients:"Bún, thịt bò, giò heo, sả, hành, rau sống",
         price:"50.000 VNĐ"
     },
@@ -75,7 +84,7 @@
     comtam:{
         name:"Cơm Tấm",
         image:"../assets/comtam.jpg",
-        desc:"Món cơm đặc trưng của miền Nam Việt Nam.",
+        desc:"Cơm tấm có hạt cơm mềm thơm, ăn cùng sườn nướng vàng óng và nước mắm đậm vị. Sự kết hợp của các nguyên liệu tạo nên món ăn đầy đủ dinh dưỡng và hấp dẫn. Đây là món ăn quen thuộc của người dân Nam Bộ.",
         ingredients:"Cơm tấm, sườn nướng, trứng, bì, dưa chua",
         price:"40.000 VNĐ"
     },
@@ -83,7 +92,7 @@
     comga:{
         name:"Cơm Gà",
         image:"../assets/comga.jpg",
-        desc:"Cơm gà thơm ngon với thịt gà mềm.",
+        desc:"Cơm gà có hương thơm hấp dẫn từ gạo được nấu cùng nước luộc gà, kết hợp với thịt gà mềm ngọt tự nhiên. Món ăn có vị đậm đà, hài hòa và giàu dinh dưỡng. Đây là một trong những món ăn được nhiều người yêu thích trong ẩm thực Việt Nam.",
         ingredients:"Cơm, thịt gà, dưa leo, rau thơm",
         price:"40.000 VNĐ"
     },
@@ -91,7 +100,7 @@
     comchien:{
         name:"Cơm Chiên Hải Sản",
         image:"../assets/comchien.jpg",
-        desc:"Cơm chiên cùng tôm, mực và rau củ.",
+        desc:"Cơm chiên hải sản có hạt cơm tơi xốp kết hợp cùng tôm, mực và rau củ tươi ngon. Hương vị đậm đà, thơm hấp dẫn và giàu dinh dưỡng. Đây là món ăn được nhiều người lựa chọn trong các bữa ăn hàng ngày.",
         ingredients:"Cơm, tôm, mực, cà rốt, đậu Hà Lan, hành lá",
         price:"55.000 VNĐ"
     },
@@ -99,7 +108,7 @@
     hutieu:{
         name:"Hủ Tiếu Nam Vang",
         image:"../assets/hutieu.jpg",
-        desc:"Món hủ tiếu đậm đà, hấp dẫn.",
+        desc:"Hủ tiếu Nam Vang có nước dùng trong, ngọt thanh và sợi hủ tiếu dai mềm. Các nguyên liệu như tôm, thịt và rau sống giúp món ăn thêm phong phú. Hương vị hài hòa tạo cảm giác ngon miệng khi thưởng thức.",
         ingredients:"Hủ tiếu, tôm, thịt bằm, gan heo, rau sống",
         price:"45.000 VNĐ"
     },
@@ -107,7 +116,7 @@
     mixao:{
         name:"Mì Xào Bò",
         image:"../assets/mixao.jpg",
-        desc:"Mì xào cùng thịt bò mềm ngon.",
+        desc:"Mì xào bò có sợi mì dai mềm kết hợp với thịt bò thơm ngon và các loại rau củ tươi xanh. Hương vị đậm đà, hài hòa giữa vị ngọt của thịt và độ giòn của rau. Đây là món ăn hấp dẫn, giàu dinh dưỡng và được nhiều người yêu thích.",
         ingredients:"Mì, thịt bò, cải xanh, hành tây",
         price:"50.000 VNĐ"
     },
@@ -115,7 +124,7 @@
     bunthitnuong:{
         name:"Bún Thịt Nướng",
         image:"../assets/bunthitnuong.jpg",
-        desc:"Bún tươi ăn kèm thịt nướng thơm lừng.",
+        desc:"Bún thịt nướng có thịt được nướng thơm lừng, ăn kèm với bún tươi và rau sống. Nước mắm chua ngọt giúp các nguyên liệu hòa quyện tạo nên hương vị đặc sắc. Món ăn mang đậm nét ẩm thực miền Nam Việt Nam.",
         ingredients:"Bún, thịt nướng, rau sống, đậu phộng",
         price:"45.000 VNĐ"
     },
@@ -123,7 +132,7 @@
     goicuon:{
         name:"Gỏi Cuốn",
         image:"../assets/goicuon.jpg",
-        desc:"Gỏi cuốn tôm thịt tươi ngon.",
+        desc:"Gỏi cuốn mang hương vị thanh mát từ rau sống, tôm, thịt và bún tươi. Khi chấm cùng nước sốt đậm đà, món ăn trở nên hấp dẫn hơn. Đây là món ăn nhẹ được nhiều người yêu thích nhờ sự tươi ngon và ít dầu mỡ.",
         ingredients:"Bánh tráng, tôm, thịt heo, bún, rau sống",
         price:"30.000 VNĐ"
     },
@@ -131,7 +140,7 @@
     chagio:{
         name:"Chả Giò",
         image:"../assets/chagio.jpg",
-        desc:"Chả giò chiên giòn hấp dẫn.",
+        desc:"Chả giò có lớp vỏ giòn rụm bao bọc phần nhân thơm ngon bên trong. Sự kết hợp giữa thịt, rau củ và gia vị tạo nên hương vị đậm đà. Món ăn thường xuất hiện trong các bữa tiệc và dịp lễ truyền thống.",
         ingredients:"Bánh tráng, thịt bằm, miến, cà rốt",
         price:"35.000 VNĐ"
     },
@@ -139,7 +148,7 @@
     garan:{
         name:"Gà Rán",
         image:"../assets/garan.jpg",
-        desc:"Gà rán giòn tan, thơm ngon.",
+        desc:"Gà rán có lớp vỏ ngoài vàng giòn hấp dẫn, thịt bên trong mềm và giữ được độ ngọt tự nhiên. Hương vị đậm đà cùng mùi thơm đặc trưng khiến món ăn được nhiều người yêu thích. Đây là món ăn phổ biến ở nhiều quốc gia trên thế giới.",
         ingredients:"Thịt gà, bột chiên giòn, gia vị",
         price:"60.000 VNĐ"
     },
@@ -147,7 +156,7 @@
     cakhoto:{
         name:"Cá Kho Tộ",
         image:"../assets/cakhoto.jpg",
-        desc:"Cá kho tộ đậm vị ăn cùng cơm trắng.",
+        desc:"Cá kho tộ có thịt cá săn chắc, thấm đều gia vị và mang vị mặn ngọt hài hòa. Hương thơm của tiêu và nước màu làm món ăn thêm hấp dẫn. Đây là món ăn dân dã quen thuộc trong bữa cơm gia đình Việt Nam.",
         ingredients:"Cá, nước màu, tiêu, hành, tỏi",
         price:"55.000 VNĐ"
     },
@@ -155,7 +164,7 @@
     calocnuong:{
         name:"Cá Lóc Nướng Rơm",
         image:"../assets/calocnuong.jpg",
-        desc:"Cá lóc nướng rơm thơm ngon, đậm đà hương vị quê.",
+        desc:"Cá lóc nướng rơm có hương thơm đặc trưng từ cách chế biến dân dã truyền thống. Thịt cá săn chắc, ngọt tự nhiên và rất ngon khi ăn cùng rau sống, bánh tráng. Món ăn mang đậm bản sắc văn hóa ẩm thực miền Tây Nam Bộ.",
         ingredients:"Cá lóc, rau sống, bánh tráng, bún",
         price:"120.000 VNĐ"
     },
@@ -163,7 +172,7 @@
     xoiga:{
         name:"Xôi Gà",
         image:"../assets/xoiga.jpg",
-        desc:"Xôi dẻo ăn cùng thịt gà thơm ngon.",
+        desc:"Xôi gà có hạt nếp dẻo thơm kết hợp cùng thịt gà mềm ngọt và hành phi vàng giòn. Hương vị hài hòa, hấp dẫn và giàu dinh dưỡng. Món ăn thường được dùng cho bữa sáng hoặc các dịp đặc biệt.",
         ingredients:"Nếp, thịt gà, hành phi",
         price:"35.000 VNĐ"
     },
@@ -171,7 +180,7 @@
     pizza:{
         name:"Pizza Thập Cẩm",
         image:"../assets/pizza.jpg",
-        desc:"Vỏ bánh mềm có hương vị đa dạng nhờ sự kết hợp của thịt và rau.",
+        desc:"Pizza thập cẩm có lớp phô mai béo ngậy kết hợp với nhiều loại nhân như thịt, xúc xích và rau củ. Vỏ bánh mềm thơm giúp món ăn thêm hấp dẫn. Hương vị đa dạng phù hợp với nhiều đối tượng thưởng thức.",
         ingredients:"Bột mì, phô mai, xúc xích, thịt bò, hành tây, ớt chuông",
         price:"89.000 VNĐ"
     },
@@ -179,7 +188,7 @@
     miy:{
         name:"Mì Ý",
         image:"../assets/miy.jpg",
-        desc:"Sốt cà chua bò bằm thơm ngon.",
+        desc:"Mì Ý có sợi mì dai vừa phải kết hợp với sốt cà chua và thịt bò bằm đậm đà. Hương vị thơm ngon, béo nhẹ và rất dễ thưởng thức. Đây là món ăn nổi tiếng của ẩm thực phương Tây.",
         ingredients:"Mì spaghetti, thịt bò bằm, cà chua, hành tây, phô mai",
         price:"65.000 VNĐ"
     },
@@ -187,7 +196,7 @@
     burger:{
         name:"Hamburger",
         image:"../assets/burger.jpg",
-        desc:"Bánh mì kẹp thịt thơm ngon kết hợp rau tươi và nước sốt đậm đà.",
+        desc:"Hamburger có phần thịt mềm mọng kết hợp với rau tươi và nước sốt đậm đà. Các nguyên liệu hòa quyện tạo nên hương vị thơm ngon và dễ ăn. Đây là món ăn nhanh phổ biến trên toàn thế giới.",
         ingredients:"Bánh burger, thịt bò, xà lách, cà chua, phô mai, sốt",
         price:"55.000 VNĐ"
     }

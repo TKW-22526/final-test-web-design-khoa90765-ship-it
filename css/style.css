@@ -205,7 +205,7 @@ body{
     height:180px;
     object-fit:cover;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(255,255,255,0.2);
+    box-shadow:0 0 10px rgb(243, 242, 242);
 }
 
 .gioithieu button{
@@ -309,4 +309,178 @@ body{
 
 .back-home button:hover{
     background:#1976d2;
+}
+/* ===== TRANG CHI TIẾT MÓN ĂN ===== */
+
+.detail-container{
+    max-width:1200px;
+    margin:40px auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.detail-img{
+    width:40%;
+    max-width:400px;
+    height:250px;
+    object-fit:cover;
+    margin:20px auto;
+    display:block;
+    border-radius:15px;
+}
+
+.detail-img:hover{
+    transform:scale(1.03);
+}
+
+.detail-content{
+    padding:35px;
+}
+
+.detail-content h1{
+    color:#ff6600;
+    font-size:42px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.detail-content p{
+    font-size:18px;
+    line-height:1.9;
+    color:#444;
+    text-align:justify;
+}
+
+.info-box{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.info-item{
+    flex:1;
+    min-width:200px;
+    background:#fff7f0;
+    padding:15px;
+    border-left:5px solid #ff6600;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.info-item h3{
+    color:#ff6600;
+    margin-bottom:8px;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:linear-gradient(45deg,#ff6600,#ff9900);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(255,102,0,0.4);
+}
+
+/* Hiệu ứng xuất hiện */
+.detail-container{
+    animation:fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .detail-img{
+        height:250px;
+    }
+
+    .detail-content h1{
+        font-size:30px;
+    }
+
+    .detail-content{
+        padding:20px;
+    }
+}.detail-content{
+    text-align:center;
+}
+
+.detail-content h1{
+    text-align:center;
+    font-size:48px;
+    color:#333;
+}
+
+.detail-content p{
+    text-align:center;
+}
+
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+
+.home-btn{
+    background:#ff6600;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+}.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+}
+
+.home-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#2196f3;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+.search-box{
+    text-align:center;
+    margin:20px 0 30px;
+}
+
+.search-box input{
+    width:60%;
+    max-width:500px;
+    padding:14px 20px;
+    border:2px solid #ff6600;
+    border-radius:30px;
+    font-size:16px;
+    outline:none;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.search-box input:focus{
+    border-color:#ff4500;
 }
